@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_song_bg">
+
+    <TextView
+        android:id="@+id/authorTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+        app:layout_constraintLeft_toLeftOf="@+id/authorTV"
+        app:layout_constraintRight_toRightOf="@+id/authorTV"
+        app:layout_constraintTop_toBottomOf="@+id/authorTV"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/playIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideH"
+        app:srcCompat="@drawable/ic_pause_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/prevIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_skip_previous_white_48dp"
+        app:layout_constraintRight_toLeftOf="@+id/rewindIB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideH"
+        android:layout_marginTop="8dp" />
+
+    <ImageButton
+        android:id="@+id/nextIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_skip_next_white_48dp"
+        app:layout_constraintLeft_toRightOf="@+id/forwardIB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideH"
+        android:layout_marginTop="8dp" />
+
+    <ImageButton
+        android:id="@+id/rewindIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_fast_rewind_white_48dp"
+        app:layout_constraintRight_toLeftOf="@+id/playIB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/guideH"
+        android:layout_marginTop="8dp" />
+
+    <ImageButton
+        android:id="@+id/forwardIB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:layout_constraintLeft_toRightOf="@+id/playIB"
+        app:srcCompat="@drawable/ic_fast_forward_white_48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/guideH"
+        android:layout_marginTop="8dp" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideH"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <SeekBar
+        android:id="@+id/sliderSB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV" />
+
+</android.support.constraint.ConstraintLayout>
