@@ -115,11 +115,13 @@
         android:id="@+id/sliderSB"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTV" />
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideH"
+        android:background="@color/colorPrimaryDark"/>
 
 </android.support.constraint.ConstraintLayout>

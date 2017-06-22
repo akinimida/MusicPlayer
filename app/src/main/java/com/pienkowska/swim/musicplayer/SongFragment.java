@@ -18,7 +18,7 @@ public class SongFragment extends Fragment {
     private Song song;
 
     private MediaPlayer player;
-    private static final int SKIP_JUMP = 5000; // 5 sec
+    private static final int SKIP_JUMP = 5000;
 
     private SeekBar slider;
     private ImageButton play;
@@ -36,7 +36,11 @@ public class SongFragment extends Fragment {
         song = SongManager.getInstance().current();
 
         initTextViews();
-        initPlayer();
+
+        player = MediaPlayer.create(getActivity(), song.getId());
+        initSlider();
+        player.start();
+
         initButtons();
 
         return root;
@@ -52,12 +56,6 @@ public class SongFragment extends Fragment {
         TextView title = (TextView) root.findViewById(R.id.titleTV);
         author.setText(song.getAuthor());
         title.setText(song.getTitle());
-    }
-
-    private void initPlayer() {
-        player = MediaPlayer.create(getActivity(), song.getId());
-        initSlider();
-        player.start();
     }
 
     private void initSlider() {
@@ -158,8 +156,8 @@ public class SongFragment extends Fragment {
 
     private void reload() {
         FragmentManager fm = getActivity().getSupportFragmentManager();
-        fm.popBackStack();
-        fm.beginTransaction().replace(R.id.containerFL, new SongFragment())
-                .addToBackStack(null).commit();
+        Fragment fragment = fm.findFragmentById(R.id.containerFL);
+        if(fragment instanceof SongFragment)
+            fm.beginTransaction().detach(fragment).attach(fragment).commit();
     }
 }
